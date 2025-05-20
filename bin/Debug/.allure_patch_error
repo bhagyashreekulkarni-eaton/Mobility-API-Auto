@@ -1,0 +1,23 @@
+System.TypeInitializationException: The type initializer for 'HarmonyLib.HarmonySharedState' threw an exception.
+ ---> System.TypeInitializationException: The type initializer for 'MonoMod.Utils.ReflectionHelper' threw an exception.
+ ---> System.MethodAccessException: Attempt by method 'MonoMod.Utils.ReflectionHelper..cctor()' to access method 'System.Reflection.Emit.SignatureHelper.GetMethodSigHelper(System.Reflection.Module, System.Runtime.InteropServices.CallingConvention, System.Type)' failed.
+   at MonoMod.Utils.ReflectionHelper..cctor() in /_/src/MonoMod.Utils/ReflectionHelper.cs:line 396
+   --- End of inner exception stack trace ---
+   at MonoMod.Utils.ReflectionHelper.ApplyRuntimeHash(AssemblyNameReference asmRef, Assembly asm) in /_/src/MonoMod.Utils/ReflectionHelper.cs:line 92
+   at MonoMod.Utils.MMReflectionImporter.ImportReference(Assembly asm) in /_/src/MonoMod.Utils/MMReflectionImporter.cs:line 113
+   at MonoMod.Utils.MMReflectionImporter._ImportReference(Type type, IGenericParameterProvider context, GenericImportKind importKind) in /_/src/MonoMod.Utils/MMReflectionImporter.cs:line 202
+   at MonoMod.Utils.MMReflectionImporter._ImportReference(Type type, IGenericParameterProvider context, GenericImportKind importKind) in /_/src/MonoMod.Utils/MMReflectionImporter.cs:line 192
+   at MonoMod.Utils.MMReflectionImporter.ImportReference(Type type, IGenericParameterProvider context) in /_/src/MonoMod.Utils/MMReflectionImporter.cs:line 133
+   at Mono.Cecil.ModuleDefinition.ImportReference(Type type, IGenericParameterProvider context) in C:\src\cecil\Mono.Cecil\ModuleDefinition.cs:line 782
+   at Mono.Cecil.ModuleDefinition.ImportReference(Type type) in C:\src\cecil\Mono.Cecil\ModuleDefinition.cs:line 768
+   at HarmonyLib.HarmonySharedState.GetOrCreateSharedStateType() in C:\Users\Brrainz\Source\Repos\Harmony\Harmony\Internal\HarmonySharedState.cs:line 102
+   at HarmonyLib.HarmonySharedState..cctor() in C:\Users\Brrainz\Source\Repos\Harmony\Harmony\Internal\HarmonySharedState.cs:line 50
+   --- End of inner exception stack trace ---
+   at HarmonyLib.HarmonySharedState.GetPatchInfo(MethodBase method) in C:\Users\Brrainz\Source\Repos\Harmony\Harmony\Internal\HarmonySharedState.cs:line 132
+   at HarmonyLib.PatchProcessor.Patch() in C:\Users\Brrainz\Source\Repos\Harmony\Harmony\Public\PatchProcessor.cs:line 135
+   at HarmonyLib.Harmony.Patch(MethodBase original, HarmonyMethod prefix, HarmonyMethod postfix, HarmonyMethod transpiler, HarmonyMethod finalizer) in C:\Users\Brrainz\Source\Repos\Harmony\Harmony\Public\Harmony.cs:line 166
+   at Allure.SpecFlowPlugin.SelectiveRun.AllureSpecFlowPatcher.PatchRunnerFactory(Harmony patcher, MethodInfo factoryCandidate)
+   at Allure.SpecFlowPlugin.SelectiveRun.AllureSpecFlowPatcher.PatchRunnerFactories(Harmony patcher, IEnumerable`1 factoryCandidates)
+   at Allure.SpecFlowPlugin.SelectiveRun.AllureSpecFlowPatcher.InjectTestPlanCheckToTestRunner(Harmony patcher)
+   at Allure.SpecFlowPlugin.SelectiveRun.AllureSpecFlowPatcher.InjectTestPlanSupport(IUnitTestRuntimeProvider unitTestRuntimeProvider)
+   at Allure.SpecFlowPlugin.SelectiveRun.AllureSpecFlowPatcher.EnsureTestPlanSupportInjected(IUnitTestRuntimeProvider unitTestRuntimeProvider, Action`1 logError)
