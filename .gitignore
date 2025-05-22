@@ -1,6 +1,1 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/Framework_API_Automation/FileContentIndex
-/.vs/Framework_API_Automation
+"bin/\nobj/\n.vs/\n*.user\n*.suo" 
